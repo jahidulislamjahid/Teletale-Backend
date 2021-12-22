@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 //connect to mongodb
-const uri = "mongodb+srv://Teletale:Hi0DYo2Cagzqsuw7@cluster0.qtoag.mongodb.net/Teletale?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qtoag.mongodb.net/Teletale?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
